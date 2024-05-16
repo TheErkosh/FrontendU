@@ -1,0 +1,93 @@
+<body>
+    <nav>
+        <div class="logo-name">
+            <div class="logo-image">
+               <img src="../assets/images/univer-logo.jpeg" alt="">
+            </div>
+            <span class="logo_name" style="font-size: 17px;">Happy University</span>
+        </div>
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a routerLink="/student">
+                    <i class="uil uil-estate"></i>
+                    <span class="link-name">Dahsboard</span>
+                </a></li>
+                <li><a routerLink="/my-profile">
+                    <i class="uil uil-files-landscapes"></i>
+                    <span class="link-name">My Profile</span>
+                </a></li>
+                <!-- <li><a href="#">
+                    <i class="uil uil-chart"></i>
+                    <span class="link-name">Course List</span>
+                </a></li> -->
+                <li><a routerLink="/student-reference">
+                    <i class="uil uil-files-landscapes"></i>
+                    <span class="link-name">Reference</span>
+                </a></li>
+               
+            </ul>
+            
+            <ul class="logout-mode">
+                <li><a routerLink="/">
+                    <i class="uil uil-signout"></i>
+                    <span class="link-name">Logout</span>
+                </a></li>
+                
+            </ul>
+        </div>
+    </nav>
+    <section class="dashboard">
+        <div class="top">
+           
+            <div class="search-box">
+                <i class="uil uil-search"></i>
+                <input type="text" placeholder="Search here...">
+            </div>
+
+            <a routerLink="/student-notification" style="margin-left: 210px;" href="">
+                <img src="https://www.svgrepo.com/show/304531/notification-alert.svg" alt="">
+            </a>
+            <a  style="margin-right: 50px;" routerLink="/my-profile">
+                <img src="../assets/images/avatar.svg" alt="">
+            </a>
+            
+        </div>
+        <div class="dash-content">
+            <div class="overview">
+                <div class="title">
+                    <i class="uil uil-tachometer-fast-alt"></i>
+                    <span class="text">Attendance List</span>
+                </div>
+                <div class="boxes">
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Date</th>
+                                <th>day</th>
+                                <th>week</th>
+                                <th>hour</th>
+                                <th>status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let attendance of attendanceList">
+                                <td>{{ attendance.userId }}</td>
+                                <td>{{ attendance.date }}</td>
+                                <td>{{ attendance.days }}</td>
+                                <td>{{ attendance.weeks }}</td>
+                                <td>{{ attendance.hours }}</td>
+                                <td [ngStyle]="getStatusStyle(attendance.status)">{{ attendance.status }}</td>
+                              </tr>
+                        </tbody>
+
+                    </table>
+                    
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+

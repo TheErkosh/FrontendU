@@ -1,0 +1,83 @@
+<body>
+    <nav>
+        <div class="logo-name">
+            <div class="logo-image">
+               <img src="../assets/images/univer-logo.jpeg" alt="">
+            </div>
+            <span class="logo_name" style="font-size: 17px;">Happy University</span>
+        </div>
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a routerLink="/teacher">
+                    <i class="uil uil-estate"></i>
+                    <span class="link-name">Dahsboard</span>
+                </a></li>
+                <li><a routerLink="/my-profile">
+                    <i class="uil uil-files-landscapes"></i>
+                    <span class="link-name">My Profile</span>
+                </a></li>
+                <li><a routerLink="/change-password">
+                    <i class="uil uil-files-landscapes"></i>
+                    <span class="link-name">Change Password</span>
+                </a></li>
+                <!-- <li><a href="#">
+                    <i class="uil uil-chart"></i>
+                    <span class="link-name">Course List</span>
+                </a></li> -->
+                <!-- <li><a routerLink="/teacher-reference">
+                    <i class="uil uil-thumbs-up"></i>
+                    <span class="link-name">Reference</span>
+                </a></li> -->
+               
+            </ul>
+            
+            <ul class="logout-mode">
+                <li><a routerLink="/">
+                    <i class="uil uil-signout"></i>
+                    <span class="link-name">Logout</span>
+                </a></li>
+                
+            </ul>
+        </div>
+    </nav>
+    <section class="dashboard">
+        <div class="top">
+           
+            <div class="search-box">
+                <i class="uil uil-search"></i>
+                <input type="text" placeholder="Search here...">
+            </div>
+
+            <a routerLink="/teacher-notification" style="margin-left: 270px;" href="">
+                <img src="https://www.svgrepo.com/show/304531/notification-alert.svg" alt="">
+                
+            </a>
+            <div style="font-size: 15px; margin-top: -25px; margin-right: 105px; color: blue;">2</div>
+            
+            <a style="margin-right: 50px;" routerLink="/my-profile">
+                <img src="../assets/images/avatar.svg" alt="">
+            </a>
+        </div>
+        <div class="dash-content">
+            <div class="overview">
+                <div class="title">
+                    <i class="uil uil-tachometer-fast-alt"></i>
+                    <span class="text">Dashboard</span>
+                </div>
+                <div class="boxes"  *ngFor="let course of courses">
+                    
+                    <div class="box box1">
+                        <i class="uil uil-thumbs-up"></i>
+                        <a routerLink="/attendance-table">
+                            <span class="text">{{course.name}}</span>
+                        </a>
+                        <span class="number">05-N</span>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+           
+        </div>
+    </section>
+</body>

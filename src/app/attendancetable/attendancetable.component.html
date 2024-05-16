@@ -1,0 +1,157 @@
+<body>
+    <nav>
+        <div class="logo-name">
+            <div class="logo-image">
+               <img src="../assets/images/univer-logo.jpeg" alt="">
+            </div>
+            <span class="logo_name" style="font-size: 17px;">Happy University</span>
+        </div>
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a routerLink="/teacher">
+                    <i class="uil uil-estate"></i>
+                    <span class="link-name">Dahsboard</span>
+                </a></li>
+                <li><a routerLink="/teacher-profile">
+                    <i class="uil uil-files-landscapes"></i>
+                    <span class="link-name">My Profile</span>
+                </a></li>
+                <!-- <li><a href="#">
+                    <i class="uil uil-chart"></i>
+                    <span class="link-name">Course List</span>
+                </a></li> -->
+                <!-- <li><a routerLink="/teacher-reference">
+                    <i class="uil uil-thumbs-up"></i>
+                    <span class="link-name">Reference</span>
+                </a></li> -->
+               
+            </ul>
+            
+            <ul class="logout-mode">
+                <li><a routerLink="/">
+                    <i class="uil uil-signout"></i>
+                    <span class="link-name">Logout</span>
+                </a></li>
+                
+            </ul>
+        </div>
+    </nav>
+    <section class="dashboard">
+        <div class="top">
+           
+            <div class="search-box">
+                <i class="uil uil-search"></i>
+                <input type="text" placeholder="Search here...">
+            </div>
+
+            <a routerLink="/teacher-notification" style="margin-left: 270px;" href="">
+                <img src="https://www.svgrepo.com/show/304531/notification-alert.svg" alt="">
+                
+            </a>
+            <div style="font-size: 15px; margin-top: -25px; margin-right: 105px; color: blue;">2</div>
+            
+            <a style="margin-right: 50px;" routerLink="/teacher-profile">
+                <img src="../assets/images/avatar.svg" alt="">
+            </a>
+        </div>
+        <div class="dash-content">
+            <div class="overview">
+                <div class="title">
+                    <i class="uil uil-tachometer-fast-alt"></i>
+                    <span class="text">Attendance Table</span>
+                </div>
+
+                <div style="display: flex; font-family: Arial, Helvetica, sans-serif;margin-bottom: 50px;">
+                    <div style="margin-left: 50px;">
+                      <div><label>Date</label></div>
+                      <input style="height: 36px; width: 260px;" type="date" [(ngModel)]="selectedDate">
+                    </div>
+                    <div style="margin-left: 50px;">
+                      <label>Day</label>
+                      <select style="height: 36px; width: 260px;" class="form-select" [(ngModel)]="selectedDay">
+                        <option value="Monday">Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
+                      </select>
+                    </div>
+                    <div style="margin-left: 50px;">
+                        <label>Weeks</label>
+                        <select [(ngModel)]="selectedWeeks" class="form-select">
+                            <option value="1 Week">1 Week</option>
+                            <option value="1 Week">2 Week</option>
+                            <option value="1 Week">3 Week</option>
+                            <option value="1 Week">4 Week</option>
+                            <option value="1 Week">5 Week</option>
+                            <option value="1 Week">6 Week</option>
+                            <option value="1 Week">7 Week</option>
+                            <option value="1 Week">8 Week</option>
+                            <option value="1 Week">9 Week</option>
+                            <option value="1 Week">10 Week</option>
+                            <option value="1 Week">11 Week</option>
+                            <option value="1 Week">12 Week</option>
+                            <option value="1 Week">13 Week</option>
+                            <option value="1 Week">14 Week</option>
+                            <option value="1 Week">15 Week</option>
+                        </select>
+                      </div>
+                      
+                    <div style="margin-left: 50px;">
+                      <label>Hour</label>
+                      <select style="height: 36px; width: 260px;" class="form-select" [(ngModel)]="selectedHour">
+                        <option value="11:00">11:00</option>
+                        <option value="12:00">12:00</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>id</th>
+                        <th>fullName</th>
+                        <th>status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let student of students">
+                        <td><a [routerLink]="['/attendance-list', student.id]">
+                            {{ student.id }}
+                        </a></td>
+                        <td>{{student.firstName}} {{student.lastName}}</td>
+                        <td>
+                            <select style="height: 36px; padding-left: 20px;" class="form-select" [(ngModel)]="selectedStatuses[student.id]">
+                            <option value="PRESENT">PRESENT</option>
+                            <option value="ABSENT">ABSENCE</option>
+                            <option value="PERMITTED">PERMITTED</option>
+                            <option value="MANUAL">MANUAL</option>
+                          </select>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+                  <div>
+                    <button style="height: 42px; width: 150px; margin-top: 25px;" class="btn btn-primary" (click)="addAttendance()">Add Attendance</button>
+                  </div>
+                  
+                <!-- <div class="boxes">
+
+                    
+                    
+                    <div class="box box1">
+                        <i class="uil uil-thumbs-up"></i>
+                        <a routerLink="/attendance-table">
+                            <span class="text">{{course.name}}</span>
+                        </a>
+                        <span class="number">05-N</span>
+                    </div>
+                    
+                    
+                </div> -->
+            </div>
+           
+        </div>
+    </section>
+</body>
