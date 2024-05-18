@@ -19,7 +19,7 @@ export class AuthService {
   private authToken: string | null = null;
   
   login(username: string, password: string): Observable<any> {
-    return this.http.post<any>('http://localhost:8080/login', { username, password });
+    return this.http.post<any>(`${this.apiServerUrl}/login`, { username, password });
   }
 
 

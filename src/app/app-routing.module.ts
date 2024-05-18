@@ -8,6 +8,8 @@ import { AttendancetableComponent } from './attendancetable/attendancetable.comp
 import { AttendancelistComponent } from './attendancelist/attendancelist.component';
 import { MyprofileComponent } from './myprofile/myprofile.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
+import { TeachernotificationComponent } from './teachernotification/teachernotification.component';
+import { StudentNotificationComponent } from './student-notification/student-notification.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -19,11 +21,12 @@ const routes: Routes = [
   // Student
   {path:'student', component:StudentComponent},
   {path:'users/:userId/courses/:courseId/selected-group', component:CourseComponent},
+  {path:'student-notification', component:StudentNotificationComponent},
 
   // Teacher
   {path:"teacher", component:TeacherComponent},
   {path:"attendance-table", component:AttendancetableComponent},
-  {path:"teacher-notification", component:TeacherComponent}
+  {path:"teacher-notification", component:TeachernotificationComponent}
 ];
 
 @NgModule({

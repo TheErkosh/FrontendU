@@ -60,9 +60,18 @@
         </div>
         <div class="dash-content">
             <div class="overview">
-                <div class="title">
+                <div class="title" style="margin-bottom: -10px;">
                     <i class="uil uil-tachometer-fast-alt"></i>
                     <span class="text">Dashboard</span>
+                </div>
+                <div style="display: flex;">
+                    <div>
+                        <a style="font-size: 11px; margin-top: 11px; margin-left: 200px;" routerLink="/teacher" >dashboard  -></a>
+                    </div>
+                    <div>
+                        <a style="font-size: 11px; margin-top: 11px; margin-left: 10px;" routerLink="/my-profile" >profile</a>
+    
+                    </div>
                 </div>
                 <div class="boxes"  *ngFor="let course of courses">
                     

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Course } from '../../../model/Course';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../../service/AuthService';
+localStorage.setItem('userId', '3');
 
 @Component({
   selector: 'app-student',

@@ -12,6 +12,7 @@ export class AttendancelistComponent implements OnInit {
 
   userId: number;
   attendanceList: AttendanceDTO[];
+  
 
   constructor(private route: ActivatedRoute, private attendanceService: AuthService) { }
 
